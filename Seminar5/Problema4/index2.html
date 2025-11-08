@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <script>
+        window.onload = () => {
+            const button = document.getElementById("myBtn");
+            const customEvent = new Event("myCustomEvent");
+
+            button.addEventListener("click", () => {
+                console.log("Butonul a fost apăsat (eveniment standard)");
+                document.dispatchEvent(customEvent);
+            });
+
+            document.addEventListener("myCustomEvent", () => {
+                console.log("Evenimentul custom a fost declanșat!");
+            });
+        };
+    </script>
+</head>
+<body>
+    <button id="myBtn">Click me!</button>
+</body>
+</html>
